@@ -1,0 +1,560 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/jonschlinkert/merge-deep"
+
+    >merge-deep (v3.0.0)</a>
+</h1>
+<h4>Recursively merge values in a javascript object.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.merge-deep">module merge-deep</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.merge-deep.merge-deep">
+            function <span class="apidocSignatureSpan"></span>merge-deep
+            <span class="apidocSignatureSpan">(orig, objects)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.merge-deep.toString">
+            function <span class="apidocSignatureSpan">merge-deep.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.merge-deep.utils">
+            function <span class="apidocSignatureSpan">merge-deep.</span>utils
+            <span class="apidocSignatureSpan">(mod, name)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.merge-deep.toString">module merge-deep.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.merge-deep.toString.toString">
+            function <span class="apidocSignatureSpan">merge-deep.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.merge-deep.utils">module merge-deep.utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.merge-deep.utils.utils">
+            function <span class="apidocSignatureSpan">merge-deep.</span>utils
+            <span class="apidocSignatureSpan">(mod, name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.merge-deep.utils.clone">
+            function <span class="apidocSignatureSpan">merge-deep.utils.</span>clone
+            <span class="apidocSignatureSpan">(val, instanceClone)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.merge-deep.utils.isObject">
+            function <span class="apidocSignatureSpan">merge-deep.utils.</span>isObject
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.merge-deep.utils.typeOf">
+            function <span class="apidocSignatureSpan">merge-deep.utils.</span>typeOf
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.merge-deep.utils.union">
+            function <span class="apidocSignatureSpan">merge-deep.utils.</span>union
+            <span class="apidocSignatureSpan">(init)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.merge-deep" id="apidoc.module.merge-deep">module merge-deep</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.merge-deep.merge-deep" id="apidoc.element.merge-deep.merge-deep">
+        function <span class="apidocSignatureSpan"></span>merge-deep
+        <span class="apidocSignatureSpan">(orig, objects)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function mergeDeep(orig, objects) {
+  if (!utils.isObject(orig) &#x26;&#x26; !Array.isArray(orig)) {
+    orig = {};
+  }
+
+  var target = utils.clone(orig);
+  var len = arguments.length;
+  var idx = 0;
+
+  while (++idx &#x3c; len) {
+    var val = arguments[idx];
+
+    if (utils.isObject(val) || Array.isArray(val)) {
+      merge(target, val);
+    }
+  }
+  return target;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.merge-deep.toString" id="apidoc.element.merge-deep.toString">
+        function <span class="apidocSignatureSpan">merge-deep.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.merge-deep.utils" id="apidoc.element.merge-deep.utils">
+        function <span class="apidocSignatureSpan">merge-deep.</span>utils
+        <span class="apidocSignatureSpan">(mod, name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">utils = function (mod, name) {
+  name = name || camelcase(mod);
+
+  // check both boolean and string in case `process.env` cases to string
+  if (process.env.UNLAZY === &#x27;true&#x27; || process.env.UNLAZY === true || process.env.TRAVIS) {
+    cache[name] = fn(mod);
+  }
+
+  Object.defineProperty(proxy, name, {
+    enumerable: true,
+    configurable: true,
+    get: getter
+  });
+
+  function getter() {
+    if (cache.hasOwnProperty(name)) {
+      return cache[name];
+    }
+    return (cache[name] = fn(mod));
+  }
+  return getter;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.merge-deep.toString" id="apidoc.module.merge-deep.toString">module merge-deep.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.merge-deep.toString.toString" id="apidoc.element.merge-deep.toString.toString">
+        function <span class="apidocSignatureSpan">merge-deep.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.merge-deep.utils" id="apidoc.module.merge-deep.utils">module merge-deep.utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.merge-deep.utils.utils" id="apidoc.element.merge-deep.utils.utils">
+        function <span class="apidocSignatureSpan">merge-deep.</span>utils
+        <span class="apidocSignatureSpan">(mod, name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">utils = function (mod, name) {
+  name = name || camelcase(mod);
+
+  // check both boolean and string in case `process.env` cases to string
+  if (process.env.UNLAZY === &#x27;true&#x27; || process.env.UNLAZY === true || process.env.TRAVIS) {
+    cache[name] = fn(mod);
+  }
+
+  Object.defineProperty(proxy, name, {
+    enumerable: true,
+    configurable: true,
+    get: getter
+  });
+
+  function getter() {
+    if (cache.hasOwnProperty(name)) {
+      return cache[name];
+    }
+    return (cache[name] = fn(mod));
+  }
+  return getter;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.merge-deep.utils.clone" id="apidoc.element.merge-deep.utils.clone">
+        function <span class="apidocSignatureSpan">merge-deep.utils.</span>clone
+        <span class="apidocSignatureSpan">(val, instanceClone)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function cloneDeep(val, instanceClone) {
+  switch (utils.typeOf(val)) {
+    case &#x27;object&#x27;:
+      return cloneObjectDeep(val, instanceClone);
+    case &#x27;array&#x27;:
+      return cloneArrayDeep(val, instanceClone);
+    default:
+      return utils.clone(val);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var utils = require(&#x27;./utils&#x27;);
+
+module.exports = function mergeDeep(orig, objects) {
+  if (!utils.isObject(orig) &#x26;&#x26; !Array.isArray(orig)) {
+orig = {};
+  }
+
+  var target = utils.<span class="apidocCodeKeywordSpan">clone</span>(orig);
+  var len = arguments.length;
+  var idx = 0;
+
+  while (++idx &#x3c; len) {
+var val = arguments[idx];
+
+if (utils.isObject(val) || Array.isArray(val)) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.merge-deep.utils.isObject" id="apidoc.element.merge-deep.utils.isObject">
+        function <span class="apidocSignatureSpan">merge-deep.utils.</span>isObject
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isObject = function (val) {
+  return utils.typeOf(val) === &#x27;object&#x27; || utils.typeOf(val) === &#x27;function&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ */
+
+&#x27;use strict&#x27;;
+
+var utils = require(&#x27;./utils&#x27;);
+
+module.exports = function mergeDeep(orig, objects) {
+if (!utils.<span class="apidocCodeKeywordSpan">isObject</span>(orig) &#x26;&#x26; !Array.isArray(orig)) {
+  orig = {};
+}
+
+var target = utils.clone(orig);
+var len = arguments.length;
+var idx = 0;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.merge-deep.utils.typeOf" id="apidoc.element.merge-deep.utils.typeOf">
+        function <span class="apidocSignatureSpan">merge-deep.utils.</span>typeOf
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function kindOf(val) {
+  // primitivies
+  if (typeof val === &#x27;undefined&#x27;) {
+    return &#x27;undefined&#x27;;
+  }
+  if (val === null) {
+    return &#x27;null&#x27;;
+  }
+  if (val === true || val === false || val instanceof Boolean) {
+    return &#x27;boolean&#x27;;
+  }
+  if (typeof val === &#x27;string&#x27; || val instanceof String) {
+    return &#x27;string&#x27;;
+  }
+  if (typeof val === &#x27;number&#x27; || val instanceof Number) {
+    return &#x27;number&#x27;;
+  }
+
+  // functions
+  if (typeof val === &#x27;function&#x27; || val instanceof Function) {
+    return &#x27;function&#x27;;
+  }
+
+  // array
+  if (typeof Array.isArray !== &#x27;undefined&#x27; &#x26;&#x26; Array.isArray(val)) {
+    return &#x27;array&#x27;;
+  }
+
+  // check for instances of RegExp and Date before calling `toString`
+  if (val instanceof RegExp) {
+    return &#x27;regexp&#x27;;
+  }
+  if (val instanceof Date) {
+    return &#x27;date&#x27;;
+  }
+
+  // other objects
+  var type = toString.call(val);
+
+  if (type === &#x27;[object RegExp]&#x27;) {
+    return &#x27;regexp&#x27;;
+  }
+  if (type === &#x27;[object Date]&#x27;) {
+    return &#x27;date&#x27;;
+  }
+  if (type === &#x27;[object Arguments]&#x27;) {
+    return &#x27;arguments&#x27;;
+  }
+  if (type === &#x27;[object Error]&#x27;) {
+    return &#x27;error&#x27;;
+  }
+
+  // buffer
+  if (typeof Buffer !== &#x27;undefined&#x27; &#x26;&#x26; isBuffer(val)) {
+    return &#x27;buffer&#x27;;
+  }
+
+  // es6: Map, WeakMap, Set, WeakSet
+  if (type === &#x27;[object Set]&#x27;) {
+    return &#x27;set&#x27;;
+  }
+  if (type === &#x27;[object WeakSet]&#x27;) {
+    return &#x27;weakset&#x27;;
+  }
+  if (type === &#x27;[object Map]&#x27;) {
+    return &#x27;map&#x27;;
+  }
+  if (type === &#x27;[object WeakMap]&#x27;) {
+    return &#x27;weakmap&#x27;;
+  }
+  if (type === &#x27;[object Symbol]&#x27;) {
+    return &#x27;symbol&#x27;;
+  }
+
+  // typed arrays
+  if (type === &#x27;[object Int8Array]&#x27;) {
+    return &#x27;int8array&#x27;;
+  }
+  if (type === &#x27;[object Uint8Array]&#x27;) {
+    return &#x27;uint8array&#x27;;
+  }
+  if (type === &#x27;[object Uint8ClampedArray]&#x27;) {
+    return &#x27;uint8clampedarray&#x27;;
+  }
+  if (type === &#x27;[object Int16Array]&#x27;) {
+    return &#x27;int16array&#x27;;
+  }
+  if (type === &#x27;[object Uint16Array]&#x27;) {
+    return &#x27;uint16array&#x27;;
+  }
+  if (type === &#x27;[object Int32Array]&#x27;) {
+    return &#x27;int32array&#x27;;
+  }
+  if (type === &#x27;[object Uint32Array]&#x27;) {
+    return &#x27;uint32array&#x27;;
+  }
+  if (type === &#x27;[object Float32Array]&#x27;) {
+    return &#x27;float32array&#x27;;
+  }
+  if (type === &#x27;[object Float64Array]&#x27;) {
+    return &#x27;float64array&#x27;;
+  }
+
+  // must be a plain object
+  return &#x27;object&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+require(&#x27;arr-union&#x27;, &#x27;union&#x27;);
+require(&#x27;clone-deep&#x27;, &#x27;clone&#x27;);
+require(&#x27;kind-of&#x27;, &#x27;typeOf&#x27;);
+require = fn;
+
+utils.isObject = function(val) {
+  return utils.<span class="apidocCodeKeywordSpan">typeOf</span>(val) === &#x27;object&#x27; || utils.typeOf(val) === &#x27;function
+&#x27;;
+};
+
+/**
+ * Expose `utils` modules
+ */
+
+module.exports = utils;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.merge-deep.utils.union" id="apidoc.element.merge-deep.utils.union">
+        function <span class="apidocSignatureSpan">merge-deep.utils.</span>union
+        <span class="apidocSignatureSpan">(init)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function union(init) {
+  if (!Array.isArray(init)) {
+    throw new TypeError(&#x27;arr-union expects the first argument to be an array.&#x27;);
+  }
+
+  var len = arguments.length;
+  var i = 0;
+
+  while (++i &#x3c; len) {
+    var arg = arguments[i];
+    if (!arg) continue;
+
+    if (!Array.isArray(arg)) {
+      arg = [arg];
+    }
+
+    for (var j = 0; j &#x3c; arg.length; j++) {
+      var ele = arg[j];
+
+      if (init.indexOf(ele) &#x3e;= 0) {
+        continue;
+      }
+      init.push(ele);
+    }
+  }
+  return init;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    var oldVal = obj[key];
+    var newVal = target[key];
+
+    if (utils.isObject(newVal) &#x26;&#x26; utils.isObject(oldVal)) {
+      target[key] = merge(newVal, oldVal);
+    } else if (Array.isArray(newVal)) {
+      target[key] = utils.<span class="apidocCodeKeywordSpan">union</span>([], newVal, oldVal);
+    } else {
+      target[key] = utils.clone(oldVal);
+    }
+  }
+  return target;
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
