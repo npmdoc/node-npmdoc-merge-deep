@@ -1,1 +1,39 @@
-{     "devDependencies": {         "merge-deep": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmdoc-merge-deep",     "homepage": "https://github.com/npmdoc/node-npmdoc-merge-deep",     "repository": {         "type": "git",         "url": "https://github.com/npmdoc/node-npmdoc-merge-deep.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "api documentation for [merge-deep (v3.0.0)](https://github.com/jonschlinkert/merge-deep) [![npm package](https://img.shields.io/npm/v/npmdoc-merge-deep.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-merge-deep) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-merge-deep.svg)](https://travis-ci.org/npmdoc/node-npmdoc-merge-deep)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "merge-deep": "*",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-merge-deep",
+    "keywords": [
+        "documentation",
+        "merge-deep"
+    ],
+    "license": "MIT",
+    "main": "lib.npmdoc_merge_deep.js",
+    "name": "npmdoc-merge-deep",
+    "nameAlias": "npmdoc_merge_deep",
+    "nameOriginal": "npmdoc-merge-deep",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmdoc/node-npmdoc-merge-deep.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
