@@ -65,31 +65,9 @@
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.merge-deep.toString">
-            function <span class="apidocSignatureSpan">merge-deep.</span>toString
-            <span class="apidocSignatureSpan">()</span>
-            </a>
-
-        </li>
-
-        <li>
-
             <a class="apidocElementLiA" href="#apidoc.element.merge-deep.utils">
             function <span class="apidocSignatureSpan">merge-deep.</span>utils
             <span class="apidocSignatureSpan">(mod, name)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.merge-deep.toString">module merge-deep.toString</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.merge-deep.toString.toString">
-            function <span class="apidocSignatureSpan">merge-deep.</span>toString
-            <span class="apidocSignatureSpan">()</span>
             </a>
 
         </li>
@@ -182,21 +160,6 @@
 
 
     <h2>
-        <a href="#apidoc.element.merge-deep.toString" id="apidoc.element.merge-deep.toString">
-        function <span class="apidocSignatureSpan">merge-deep.</span>toString
-        <span class="apidocSignatureSpan">()</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">toString = function () {
-    return text;
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
-    <h2>
         <a href="#apidoc.element.merge-deep.utils" id="apidoc.element.merge-deep.utils">
         function <span class="apidocSignatureSpan">merge-deep.</span>utils
         <span class="apidocSignatureSpan">(mod, name)</span>
@@ -225,24 +188,6 @@
   }
   return getter;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.merge-deep.toString" id="apidoc.module.merge-deep.toString">module merge-deep.toString</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.merge-deep.toString.toString" id="apidoc.element.merge-deep.toString.toString">
-        function <span class="apidocSignatureSpan">merge-deep.</span>toString
-        <span class="apidocSignatureSpan">()</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
@@ -304,23 +249,7 @@
       return utils.clone(val);
   }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-var utils = require('./utils');
-
-module.exports = function mergeDeep(orig, objects) {
-  if (!utils.isObject(orig) &amp;&amp; !Array.isArray(orig)) {
-orig = {};
-  }
-
-  var target = utils.<span class="apidocCodeKeywordSpan">clone</span>(orig);
-  var len = arguments.length;
-  var idx = 0;
-
-  while (++idx &lt; len) {
-var val = arguments[idx];
-
-if (utils.isObject(val) || Array.isArray(val)) {
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -335,22 +264,7 @@ if (utils.isObject(val) || Array.isArray(val)) {
     <li>description and source-code<pre class="apidocCodePre">isObject = function (val) {
   return utils.typeOf(val) === 'object' || utils.typeOf(val) === 'function';
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
- */
-
-'use strict';
-
-var utils = require('./utils');
-
-module.exports = function mergeDeep(orig, objects) {
-if (!utils.<span class="apidocCodeKeywordSpan">isObject</span>(orig) &amp;&amp; !Array.isArray(orig)) {
-  orig = {};
-}
-
-var target = utils.clone(orig);
-var len = arguments.length;
-var idx = 0;
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -524,22 +438,7 @@ module.exports = utils;
   }
   return init;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-
-    var oldVal = obj[key];
-    var newVal = target[key];
-
-    if (utils.isObject(newVal) &amp;&amp; utils.isObject(oldVal)) {
-      target[key] = merge(newVal, oldVal);
-    } else if (Array.isArray(newVal)) {
-      target[key] = utils.<span class="apidocCodeKeywordSpan">union</span>([], newVal, oldVal);
-    } else {
-      target[key] = utils.clone(oldVal);
-    }
-  }
-  return target;
-}
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
