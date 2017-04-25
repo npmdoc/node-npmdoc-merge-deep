@@ -1,4 +1,7 @@
-# api documentation for  [merge-deep (v3.0.0)](https://github.com/jonschlinkert/merge-deep)  [![npm package](https://img.shields.io/npm/v/npmdoc-merge-deep.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-merge-deep) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-merge-deep.svg)](https://travis-ci.org/npmdoc/node-npmdoc-merge-deep)
+# npmdoc-merge-deep
+
+#### basic api documentation for  [merge-deep (v3.0.0)](https://github.com/jonschlinkert/merge-deep)  [![npm package](https://img.shields.io/npm/v/npmdoc-merge-deep.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-merge-deep) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-merge-deep.svg)](https://travis-ci.org/npmdoc/node-npmdoc-merge-deep)
+
 #### Recursively merge values in a javascript object.
 
 [![NPM](https://nodei.co/npm/merge-deep.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/merge-deep)
@@ -117,7 +120,8 @@
             "reflinks": true
         }
     },
-    "version": "3.0.0"
+    "version": "3.0.0",
+    "bin": {}
 }
 ```
 
